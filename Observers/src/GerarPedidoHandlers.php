@@ -33,16 +33,8 @@ class GerarPedidoHandlers
         $this->orcamento = $orcamento;
 
         foreach ($this->acoesAposGerarPedido as $acao) {
-            $acao->executaAcao();
+            $acao->executaAcao($pedido);
         }
-
-        $pedidoRepository = new CriarPedidoNoBanco();
-        $logGerarPedido = new LogGerarPedido();
-        $enviarPedido = new EnviarPedidoNoBanco();
-
-        $pedidoRepository->executaAcao($pedido);
-        $logGerarPedido->executaAcao($pedido);
-        $enviarPedido->executaAcao($pedido);
 
         // PedidoRepository
         echo "Criar pedido no banco de dados" . PHP_EOL;

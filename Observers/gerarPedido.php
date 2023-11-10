@@ -10,6 +10,6 @@ $nomeCliente = $argv[3];
 $gerarPedido = new \Alura\DesignPattern\GerarPedido($valorOrcamentos, $numeroItens, $nomeCliente);
 $gerarPedidoHandlers =  new GerarPedidoHandlers();
 $gerarPedidoHandlers->adicionarAcaoAoGerarPedido(new \Alura\DesignPattern\AcoesAoGerarPedido\CriarPedidoNoBanco());
-//$gerarPedidoHandlers->adicionarAcaoAoGerarPedido(new \Alura\DesignPattern\LogPedidoNo);
+$gerarPedidoHandlers->adicionarAcaoAoGerarPedido(new \Alura\DesignPattern\AcoesAoGerarPedido\LogPedidoNoBanco());
 $gerarPedidoHandlers->execute($gerarPedido);
 
