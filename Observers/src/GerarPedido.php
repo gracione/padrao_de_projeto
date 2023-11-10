@@ -26,14 +26,14 @@ class GerarPedido
 
         $pedido = new Pedido();
         $this->dataFinalizado = new \DateTimeImmutable();
-        $this->nomeCliente = $this->nomeCliente;
+        $this->nomeCliente = $pedido->nomeCliente;
         $this->orcamento = $orcamento;
     }
     public function getNumeroItens() {
-        return $this->valorOrcamento;
+        return $this->numeroItens;
     }
     public function getValorOrcamento() {
-        return $this->nomeCliente;
+        return $this->valorOrcamento;
     }
     public function getNomeCliente() {
         return $this->nomeCliente;
